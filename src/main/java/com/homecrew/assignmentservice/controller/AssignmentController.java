@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/assignments")
 public class AssignmentController {
 
-  @GetMapping("/test")
-  public String test() {
-    return "Assignment Service is working";
-  }
+    @GetMapping("/test")
+    public String test() {
+        return "Assignment Service is working";
+    }
 }
