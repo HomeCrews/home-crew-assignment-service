@@ -154,6 +154,16 @@
     </dependency>
     <dependency>
       <!--
+        Makes spring.cloud.config.retry.* in application.properties live: the
+        config client only retries a fail-fast import when spring-retry is on
+        the classpath, and it is optional in spring-cloud-config-client, so not
+        transitive. Version managed by spring-cloud-commons-dependencies.
+      -->
+      <groupId>org.springframework.retry</groupId>
+      <artifactId>spring-retry</artifactId>
+    </dependency>
+    <dependency>
+      <!--
         Hot reload for the containerised dev loop: see ./dev up in
         home-crew-infrastructure. DevTools POLLS the classpath rather than using
         inotify, which is the only reason it works across a Docker bind mount -
